@@ -39,7 +39,11 @@ def recv_runcommand():
     results = nr.run(task=netmiko_send_command, command_string=str(command))
     my_list = [v.result for v in results.values()]
     my_keys = [k for k in results.keys()]
-    return render_template("running2.html", my_list=my_list, my_keys=my_keys )
+    data = []
+    for index, item in enumerate(my_keys):
+        data.append(my_keys[index])
+        data.append(my_list[index])
+    return render_template("running2.html", my_list=data)
 
 @app.route("/all/version")
 def get_all_version():
