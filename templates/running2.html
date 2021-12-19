@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Running Configurations of all Devices:</h4>
+{% for data in my_list %}
+{% for key in my_keys %}
+<div class="alert alert-dark" role="alert">
+   <pre>
+{{ key }}       
+{{ data }}
+</pre>
+</div>
+{% endfor %}
+{% endfor %}
+{% endblock content %}

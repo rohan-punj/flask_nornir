@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h3> Run Show Command On All Cisco Devices</h3>
+  <form action="/run" method="post">
+      <label>Command</label>
+      <input type="text" placeholder="e.g. show run" name = "cmd">
+      <button type="submit">Send</button>
+  </form>
+{% endblock %}
